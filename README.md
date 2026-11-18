@@ -1,60 +1,63 @@
-# Macaw's Trapdoors — Horizon port
+# Macaw's Trapdoors — a Horizon port
 
-A port of [Macaw's Trapdoors](https://github.com/sketchmacaw/Trapdoors) by
-Sketch Macaw and Peachy Macaw for Horizon: all 179 trapdoors — the
-vanilla-matched woods plus the glass, metal, barn, beach, cottage and themed
-sets — with their blockstates, models, textures, recipes, loot, advancements and
-language files.
+**Macaw's Trapdoors** is a Minecraft mod. This repository is a **port of it to [Horizon](https://github.com/horizon-rust/horizon)**, the Rust engine for Minecraft Java 26.3. It carries the complete source of the port plus the content files it ships, and installs as a single `.hmod` package.
 
-- Every trapdoor is declared from its vanilla trapdoor template with all 64
-  states and its own model; the 191 recipes (179 trapdoors plus 12 prints) and
-  179 loot tables are the mod's own.
-- The 12 print items are carried with their recipes, and the lang files name all
-  179 blocks.
+Upstream: [sketchmacaw/Trapdoors](https://github.com/sketchmacaw/Trapdoors) — licence **MIT**.
 
-This is a data-tier carry: no native code and no hooks. MIT — original copyright
-and licence notices are kept in the port repository; see LICENSE and
-LICENSE-NOTICE.md there.
+| | |
+|---|---|
+| Upstream mod | Macaw's Trapdoors ([source](https://github.com/sketchmacaw/Trapdoors)) |
+| Ported to | Horizon 0b14f8a, Minecraft Java 26.3, mod API `0.2` |
+| Package | `mcwtrpdoors.hmod` (install it with the Horizon launcher) |
+| Licence | **MIT** — the upstream mod's licence; see [Licence and credit](#licence-and-credit) |
 
-**Original:** [Macaw's Trapdoors](https://github.com/sketchmacaw/Trapdoors) 1.1.5 by
-Sketch Macaw, Peachy Macaw, **MIT**. The original
-copyright and licence notices are kept in [LICENSE](LICENSE), and
-[LICENSE-NOTICE.md](LICENSE-NOTICE.md) records where each was read from.
+## What this port implements
 
-**Horizon:** a port for [Horizon](https://github.com/horizon-rust/horizon), Minecraft:
-Java Edition 26.3 rewritten in Rust. The exact Horizon and horizon-mixins
-revisions this port builds against are pinned in `compatibility.json`.
+- **The three IRON trapdoors.** `metal_trapdoor`, `metal_warning_trapdoor`,
+- **The 16 mod block tags** in the jar's pre-1.21 `tags/blocks/` folder are
+- **The creative tab** (`TabInit`) is Java; a data-tier port has no code, so it
 
-## Install
+## Not yet ported
 
-1. Take `mcwtrpdoors.hmod` from this repository (or build it below).
-2. Put it in the game folder's `horizon-mods` folder — the game folder is the one
-   holding `options.txt`.
-3. Mods are off by default: enable this one in the game's mod list.
+- **Template numbers.** No NeoForge oracle here, so per-block hardness, blast
+- **`NonCullTrapdoor` is not carried.** The jar has one block class that
+- **Fuel burn time.** Upstream's `FuelItemBlock` makes most trapdoor items burn
+- **Print tooltip.** `ToolTip` adds the grey `mcwtrpdoors.crafting.desc` line to
+- **Metal trapdoors still open on redstone** (the important half) because the
+- **`ko_kr.json` is malformed upstream** (missing comma after
+- **Stale upstream lang keys.** `en_us.json` has 8 `block.mcwtrpdoors.*` keys
+- **Upstream orphan advancement.** `advancement/recipes/bamboo/bamboo_ranch_trapdoor.json`
 
-To try it without installing, start the game with
-`--dev-mod mcwtrpdoors.hmod`.
+## Installing
 
-## Build
+1. Install the [Horizon launcher](https://github.com/horizon-rust/horizon/releases) (0.2.70 or newer).
+2. Add `mcwtrpdoors.hmod` to the instance's mods.
+3. The package is pinned to a specific Horizon build; the launcher checks that pin.
 
-This is a content-only mod: `content/horizon-mod.toml` plus `assets/` and
-`data/`, with the 26.3 re-spellings in `content/patches/`.
+## Licence and credit
 
-```sh
-cd content && cargo horizon-mod build    # packs content/ into the .hmod and checks it
-bash content/patches/apply.sh           # re-applies the 26.3 block/tab patches
+Macaw's Trapdoors was created by its upstream authors; the code, models and assets in the original mod
+remain theirs and are used here under **MIT**. The Rust in this repository is a clean-room
+rewrite for Horizon, not a translation of the original source.
+
+- `LICENSE` — the upstream licence text.
+- `LICENSE-NOTICE.md` — what this port carries and where it came from.
+- The upstream project: https://github.com/sketchmacaw/Trapdoors
+
+## Technical details
+
+```
+horizon-mod.toml   package manifest (id, version, api, [native] pin)
+Cargo.toml         the crate; depends on `horizon-mod-api` from the fetched SDK
+src/               lib.rs (the one `impl Hooks`), runtime.rs (pure logic + tests), glue
+assets/ data/      the content the package ships
+tools/             content generators and the e2e scenario
 ```
 
-`cargo-horizon-mod` comes from the Horizon repository
-(`cargo install --git https://github.com/horizon-rust/horizon cargo-horizon-mod`).
-`tools/e2e.sh` is the in-game harness and expects a campaign checkout
-(`$CAMPAIGN_ROOT`) with the prepared 26.3 resources (`$HORIZON_RES`, default
-`.local/horizon-client/26.3`).
+- Build: `cargo horizon-mod build` (packages; it does not compile against the game).
+- Test: `cargo test`, `cargo clippy --all-targets -- -D warnings`.
+- In-game: `ports/tools/launcher-game.sh run mcwtrpdoors` in the campaign tree, or install the
+  `.hmod` and play; the harness scenario is `tools/e2e.sh`.
 
-## Layout
-
-`content/` is the whole port: 179 declared blocks, the carried assets and data, and the 26.3 patch set in `content/patches/`.
-
-This is an unofficial port: Horizon is not affiliated with the original author.
-The licence above is the original's and travels with every copy; see
-[LICENSE](LICENSE) and [LICENSE-NOTICE.md](LICENSE-NOTICE.md).
+This repository is generated from the campaign's port at `ports/mcwtrpdoors/`; the port's own
+`notes.md` is the full record (decisions, traps, evidence).
