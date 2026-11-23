@@ -1,9 +1,9 @@
 # Macaw's Trapdoors for Sunrise: content only (data/ and assets/), no code.
 id = "mcwtrpdoors"
 name = "Macaw's Trapdoors"
-version = "1.1.7"
+version = "1.1.8"
 description = "179 trapdoors in every wood plus glass and metal, with trapdoor prints."
-authors = ["Sketch Macaw", "Peachy Macaw"]
+authors = ["Sketch Macaw", "Peachy Macaw", "arismoko"]
 license = "MIT"
 credits = "Ported to Minecraft 26.3 by AdLf0208, and to Sunrise by arismoko."
 homepage = "https://github.com/arismoko/macaws_trapdoors"
