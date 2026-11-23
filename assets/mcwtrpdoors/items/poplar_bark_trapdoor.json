@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/rp_bark/poplar_bark_trapdoor_bottom"
+  }
+}

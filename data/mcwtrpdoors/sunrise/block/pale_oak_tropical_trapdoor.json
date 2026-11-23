@@ -1,0 +1,9 @@
+{
+  "template": "minecraft:pale_oak_trapdoor",
+  "components": {
+    "minecraft:cooking_fuel": {
+      "burn_time": 300,
+      "speed_multiplier": "minecraft:cooking/speed_default"
+    }
+  }
+}

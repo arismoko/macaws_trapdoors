@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/glass/poplar_glass_trapdoor_bottom"
+  }
+}

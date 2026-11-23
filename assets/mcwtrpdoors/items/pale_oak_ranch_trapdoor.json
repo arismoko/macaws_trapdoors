@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/ranch/pale_oak_ranch_trapdoor_bottom"
+  }
+}

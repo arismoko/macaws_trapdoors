@@ -1,0 +1,13 @@
+{
+  "type" : "minecraft:crafting_shaped",
+  "group" : "barn_trapdoors",
+  "pattern" : [ "A", "B" ],
+  "key" : {
+    "A" : "minecraft:poplar_planks",
+    "B" : "mcwtrpdoors:poplar_glass_trapdoor"
+  },
+  "result" : {
+    "count" : 1,
+    "id" : "mcwtrpdoors:poplar_barn_trapdoor"
+  }
+}

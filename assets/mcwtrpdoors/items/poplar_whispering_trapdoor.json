@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/whispering/poplar_whispering_trapdoor_bottom"
+  }
+}

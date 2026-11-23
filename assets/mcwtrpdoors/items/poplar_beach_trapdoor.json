@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/beach/poplar_beach_trapdoor_bottom"
+  }
+}

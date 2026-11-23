@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/barred/pale_oak_barred_trapdoor_bottom"
+  }
+}

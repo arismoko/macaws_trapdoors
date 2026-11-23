@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/cottage/pale_oak_cottage_trapdoor_bottom"
+  }
+}

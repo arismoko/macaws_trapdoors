@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/chevron/mangrove_chevron_trapdoor_bottom"
+  }
+}

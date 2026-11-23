@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/bamboo/pale_oak_bamboo_trapdoor_bottom"
+  }
+}

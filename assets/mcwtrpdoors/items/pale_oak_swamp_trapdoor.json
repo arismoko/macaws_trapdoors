@@ -1,0 +1,6 @@
+{
+  "model" : {
+    "type" : "minecraft:model",
+    "model" : "mcwtrpdoors:block/swamp/pale_oak_swamp_trapdoor_bottom"
+  }
+}

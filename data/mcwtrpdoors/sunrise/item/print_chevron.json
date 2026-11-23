@@ -1,0 +1,16 @@
+{
+  "template": "minecraft:stick",
+  "components": {
+    "minecraft:cooking_fuel": {
+      "burn_time": 150,
+      "speed_multiplier": "minecraft:cooking/speed_default"
+    },
+    "minecraft:lore": [
+      {
+        "translate": "mcwtrpdoors.crafting.desc",
+        "color": "gray",
+        "italic": false
+      }
+    ]
+  }
+}
