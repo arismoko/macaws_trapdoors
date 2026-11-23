@@ -12,7 +12,6 @@ What it does:
 
 Differences from the original:
 
-- Trapdoor items burn for vanilla's trapdoor time, not the original's.
 - The prints show no crafting tooltip.
 """
 categories = ["decoration"]

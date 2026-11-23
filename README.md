@@ -12,7 +12,6 @@ A port of [Macaw's Trapdoors](https://github.com/sketchmacaw/Trapdoors) by Sketc
 
 ## Differences from the original
 
-- Trapdoor items burn for vanilla's trapdoor time, not the original's.
 - The prints show no crafting tooltip.
 
 ## Building
