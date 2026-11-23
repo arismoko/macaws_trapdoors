@@ -6,13 +6,14 @@ A port of [Macaw's Trapdoors](https://github.com/sketchmacaw/Trapdoors) by Sketc
 
 ## What it does
 
+- The twelve prints say "Crafting Ingredient" in their tooltip and burn for 150 ticks, as the original's do.
 - 176 wooden trapdoors: barn, barred, beach, cottage, four-panel, glass, mystic, paper, tropical, swamp, bamboo, blossom, classic, bark, ranch and barrel, in eleven woods.
 - Three metal trapdoors that open only with redstone, like the iron trapdoor.
 - The 12 trapdoor prints, recipes, drops and creative tab.
 
 ## Differences from the original
 
-- The prints show no crafting tooltip.
+- None known.
 
 ## Building
 

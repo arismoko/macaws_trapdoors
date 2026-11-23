@@ -459,8 +459,8 @@ def main() -> int:
         for p in glob.glob(os.path.join(args.content, "assets/mcwtrpdoors/lang/*.json"))
     }
     check(
-        lang_files == jar_lang - {"ko_kr.json"},
-        f"lang files carried: {sorted(lang_files ^ (jar_lang - {'ko_kr.json'}))}",
+        lang_files == jar_lang,
+        f"lang files carried: {sorted(lang_files ^ (jar_lang))}",
     )
     lang = load(os.path.join(args.content, "assets/mcwtrpdoors/lang/en_us.json"))
     unnamed = [b for b in carried if f"block.mcwtrpdoors.{b}" not in lang]
@@ -473,8 +473,8 @@ def main() -> int:
         if k.startswith("block.mcwtrpdoors.") and k[len("block.mcwtrpdoors."):] not in carried
     )
     say(
-        f"lang: {len(lang_files)} files carried (15 in the jar, ko_kr.json is malformed "
-        f"upstream and skipped), all {len(carried)} blocks and {len(prints)} prints named; "
+        f"lang: {len(lang_files)} files carried (15 in the jar, ko_kr.json is carried re-serialised "
+        f"from the original), all {len(carried)} blocks and {len(prints)} prints named; "
         f"{len(stale)} stale upstream keys kept: {stale}"
     )
 
