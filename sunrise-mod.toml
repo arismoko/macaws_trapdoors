@@ -1,7 +1,7 @@
 # Macaw's Trapdoors for Sunrise: content only (data/ and assets/), no code.
 id = "mcwtrpdoors"
 name = "Macaw's Trapdoors"
-version = "1.1.5"
+version = "1.1.6"
 description = "179 trapdoors in every wood plus glass and metal, with trapdoor prints."
 authors = ["Sketch Macaw", "Peachy Macaw"]
 license = "MIT"
